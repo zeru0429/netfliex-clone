@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div className='row'>
 
-      <Banner fetchUrl={request.fetchNetflixOriginals} />
+      <Banner fetchUrl={request.fetchAnimationMovies} />
       {/* <Row /> */}
      
     </div>
