@@ -31,8 +31,20 @@
     margin-right: 100px;
     width: 200px;
     font-weight: 300;
-    background-color: tomato;
+    background-color: #E62E2D;
     border-radius: 5px;
     color: white;
-  
+    height: 30px; /* Increased height for a more prominent appearance */ /* Increased font weight for a bolder look */
+    background-color: #e50914; /* Netflix red color */
+    border: none; /* Removed border */
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Added transition effect */  
+}
+
+.links_to{
+    color: white;
+    text-decoration: none;
 }

@@ -1,0 +1,88 @@
+body {
+  background-color: #111 !important;
+}
+
+.second {
+  background-color: #11111165 ;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+  background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/bca629a2-e617-44be-9045-d6a66e01939d/ET-en-20230814-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+}
+
+.title {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 20vh;
+}
+
+.subtitle {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.subtitle2 {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input_section {
+  margin: 0 auto;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.searchinput {
+   width: 90%;/* Adjust the width as per your preference */
+  height: 20px; /* Adjust the height as per your preference */
+  padding: 10px; /* Added padding for better spacing */
+  border: none; /* Removed border */
+  background-color: #e8e8e8; /* Light gray background color */
+  border-radius: 5px;
+  color: #555555; /* Dark gray text color */
+  font-size: 16px; /* Adjust the font size as per your preference */
+  font-weight: 400; /* Adjust the font weight as per your preference */
+  outline: none; /* Removed default focus outline */
+}
+
+.searchinput::placeholder {
+  color: #999999; /* Light gray placeholder text color */
+}
+
+/* Optional: Add hover and focus styles for better interactivity */
+.searchinput:hover {
+  background-color: #f2f2f2; /* Lighter gray background color on hover */
+}
+
+.searchinput:focus {
+  background-color: #ffffff; /* White background color on focus */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Added box shadow on focus for better visibility */
+}
+
+.start_button {
+    margin: 10px;
+    margin-right: 100px;
+    width: 30%;
+    font-weight: 300;
+    background-color: #E62E2D;
+    border-radius: 5px;
+    color: white;
+    height: 40px; /* Increased height for a more prominent appearance */ /* Increased font weight for a bolder look */
+    background-color: #e50914; /* Netflix red color */
+    border: none; /* Removed border */
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Added transition effect */  
+}
