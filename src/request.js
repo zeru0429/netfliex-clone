@@ -1,4 +1,4 @@
-const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
+const API_KEY = "177269945e48f57f144fce22779a7dd9";
 const requests = {
    
     fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,

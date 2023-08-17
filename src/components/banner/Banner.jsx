@@ -1,7 +1,7 @@
 import React, { useEffect,useState} from 'react'
 import './banner.css'
 import axios from '../../axios';
-
+const base_url2 = "https://image.tmdb.org/t/p/original/"
 
 const Banner = ({fetchUrl}) => {
     const [movie,setMovie] =useState([]);
