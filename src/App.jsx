@@ -1,12 +1,26 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
 import './App.css'
+import { Route, Routes } from 'react-router-dom';
+
+// pages
+import Home from './pages/home/Home';
+
+//component
+import Nav from './components/nav/Nav'
+
 
 function App() {
 
   return (
-    <>
-      <h1>hihi</h1>
-    </>
+    <div className='app'>
+    
+      <Nav />
+      <Home/>
+      {/* <Routes>
+        <Nav/>
+        <Route path='/' element={<Home/>} />
+      </Routes> */}
+    </div>
   )
 }
 
