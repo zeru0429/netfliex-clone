@@ -20,10 +20,9 @@ const Home = () => {
       <Row isposter={false} fetchUrl={requests.fetchTopRatedMovies} title='Top Rated'/>
       <Row isposter={false} fetchUrl={requests.fetchActionMovies} title='Action Movies'/>
       <Row isposter={false} fetchUrl={requests.fetchComedyMovies} title='Comedy Movies'/>
-      <Link to='/home2'>
-        <DoubleArrowIcon />
-      </Link>
-     
+       <div className='leftside'>
+       Next Page <Link to='/home2' ><DoubleArrowIcon className='nextbutton' /></Link>
+      </div>
     </div>
   )
 }

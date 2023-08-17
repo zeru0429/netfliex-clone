@@ -19,10 +19,11 @@ function App() {
       <Nav />
       {/* <Second /> */}
      
-      <Routes>  
+      <Routes>    
         <Route path='/' element={<Home />} />
-        <Route path='/home2' element={<Home />} />
-         <Route path='/second' element={<Second />} />
+        <Route path='/home2' element={<Home2 />} />
+        <Route path='/second' element={<Second />} />
+        <Route path='*' element={<><h1>4O4</h1></>} />
       </Routes>
       <Footer />
       {/* <Apppp />
