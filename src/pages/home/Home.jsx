@@ -21,7 +21,7 @@ const Home = () => {
       <Row isposter={false} fetchUrl={requests.fetchActionMovies} title='Action Movies'/>
       <Row isposter={false} fetchUrl={requests.fetchComedyMovies} title='Comedy Movies'/>
        <div className='leftside'>
-       Next Page <Link to='/home2' ><DoubleArrowIcon className='nextbutton' /></Link>
+       Next Page <Link to='/SecondPage' ><DoubleArrowIcon className='nextbutton' /></Link>
       </div>
     </div>
   )
