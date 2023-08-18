@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "../../axios";
 import "./row.css";
 import YouTube from "react-youtube";
@@ -8,28 +8,24 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-
-
 function Row({ title, fetchUrl, isposter }) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
+  const [scrollLeftVisible, setScrollLeftVisible] = useState(false);
+  const [scrollRightVisible, setScrollRightVisible] = useState(true);
 
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const rowRef = useRef(null);
   const scrollAmount = 500; // Adjust this value to control the scroll distance
 
   const scrollLeft = () => {
-    const row = document.getElementById(`row-${title}`);
-    if (row) {
-      row.scrollLeft -= scrollAmount;
-      setScrollPosition(row.scrollLeft);
+    if (rowRef.current) {
+      rowRef.current.scrollLeft -= scrollAmount;
     }
   };
 
   const scrollRight = () => {
-    const row = document.getElementById(`row-${title}`);
-    if (row) {
-      row.scrollLeft += scrollAmount;
-      setScrollPosition(row.scrollLeft);
+    if (rowRef.current) {
+      rowRef.current.scrollLeft += scrollAmount;
     }
   };
 
@@ -41,6 +37,26 @@ function Row({ title, fetchUrl, isposter }) {
     }
     fetchData();
   }, [fetchUrl]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (rowRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = rowRef.current;
+        setScrollLeftVisible(scrollLeft > 0);
+        setScrollRightVisible(scrollLeft + clientWidth < scrollWidth);
+      }
+    };
+
+    if (rowRef.current) {
+      rowRef.current.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (rowRef.current) {
+        rowRef.current.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
 
   const opts = {
     height: "390",
@@ -67,10 +83,12 @@ function Row({ title, fetchUrl, isposter }) {
     <div className="row">
       <h2>{title}</h2>
       <div className="row__buttons">
-        <button className="scroll-button" onClick={scrollLeft}>
-         <KeyboardArrowLeftIcon  className="icons"/>
-        </button>
-        <div className="row__posters" id={`row-${title}`}>
+        {scrollLeftVisible && (
+          <button className="scroll-button" onClick={scrollLeft}>
+            <KeyboardArrowLeftIcon className="icons" />
+          </button>
+        )}
+        <div className="row__posters" ref={rowRef} id={`row-${title}`}>
           {movies.map((movie) => (
             <img
               key={movie.id}
@@ -83,9 +101,11 @@ function Row({ title, fetchUrl, isposter }) {
             />
           ))}
         </div>
-        <button className="scroll-button" onClick={scrollRight}>
-          <KeyboardArrowRightIcon className="icons"/>
-        </button>
+        {scrollRightVisible && (
+          <button className="scroll-button" onClick={scrollRight}>
+            <KeyboardArrowRightIcon className="icons" />
+          </button>
+        )}
       </div>
 
       <div style={{ padding: "40px" }}>
