@@ -5,7 +5,7 @@
 .row__poster {
   width: 100%;
   object-fit: contain;
-  max-height: 100px;
+  max-height: 150px;
   transition: transform 450ms;
   margin-right: 10px;
 }
@@ -13,6 +13,7 @@
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
+  scroll-behavior: smooth;
   padding: 20px;
 }
 .row__posters::-webkit-scrollbar {
@@ -28,4 +29,20 @@
 .row__posterLarge:hover {
   transform: scale(1.09);
   opacity: 1;
+}
+.row__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.scroll-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: rgb(204, 10, 10);
+  cursor: pointer;
+  outline: none;
+  font-size: 30px;
+  
 }

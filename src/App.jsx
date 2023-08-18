@@ -25,7 +25,7 @@ function App() {
         <Route path='/second' element={<Second />} />
         <Route path='*' element={<><h1>4O4</h1></>} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
       {/* <Apppp />
       <Tab />
       <TabContent /> */}

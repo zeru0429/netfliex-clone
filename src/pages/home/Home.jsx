@@ -15,7 +15,7 @@ const Home = () => {
     <div className='row'>
       <Banner fetchUrl={requests.fetchAnimationMovies} />
       <Row isposter={true} fetchUrl={requests.fetchNetflixOriginals} title='NETFLIX ORIGINALS'/>
-      <Row isposter={true} fetchUrl={requests.fetchUpcomming} title='Upcoming Movies'/>
+      <Row isposter={false} fetchUrl={requests.fetchUpcomming} title='Upcoming Movies'/>
       <Row isposter={false} fetchUrl={requests.fetchTrending} title='Trending Now'/>
       <Row isposter={false} fetchUrl={requests.fetchTopRatedMovies} title='Top Rated'/>
       <Row isposter={false} fetchUrl={requests.fetchActionMovies} title='Action Movies'/>
