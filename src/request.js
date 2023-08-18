@@ -28,4 +28,3 @@ const requests = {
     fetchWesternMovies: `/discover/movie?api_key=${API_KEY}&with_genres=37`,
 };
 export default requests;
-
