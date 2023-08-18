@@ -37,8 +37,8 @@ function Nav() {
                 src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png"
                 alt="Avatar logo"
             />
-          <button className="nav__avatar joinbtn" > <Link className="links_to" to='/second'>JOIN KNOW</Link></button>
-            
+          {/* <button className="nav__avatar joinbtn" > <Link className="links_to" to='/second'>JOIN KNOW</Link></button>
+             */}
         </div>
     );
 }
